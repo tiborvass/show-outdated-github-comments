@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "Show outdated GitHub comments",
+  "short_name": "Show GH comments",
+  "description": "This extension allows the user to expand the outdated hidden GitHub comments on pull requests.",
+  "version": "0.1.0",
+
+  "content_scripts":[
+	  {
+		  "js": ["main.js"],
+		  "run_at": "document_idle",
+		  "matches": ["https://github.com/*/*/pull/*"]
+	  }
+  ],
+  "permissions": [
+    "activeTab", "https://github.com/*/*/pull/*"
+  ],
+  "icons": {
+	  "48": "icon.png"
+  }
+}
